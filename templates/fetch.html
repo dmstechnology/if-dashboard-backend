@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetched Data</title>
+</head>
+<body>
+    <h1>Fetched Data</h1>
+    <ul>
+    {% for file in files %}
+        <li>
+            <strong>Filename:</strong> {{ file.filename }}<br>
+            <strong>Upload Date:</strong> {{ file.upload_date }}<br>
+            <strong>Data:</strong><br>
+            <ul>
+            {% for row in file.data %}
+                <li>{{ row }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
